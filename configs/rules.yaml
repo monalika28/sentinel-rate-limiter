@@ -1,0 +1,20 @@
+rules:
+  # Enterprise tier: 500 requests per minute
+  - descriptor: "tier:enterprise"
+    limit: 500
+    window_seconds: 60
+
+  # Pro tier: 100 requests per minute
+  - descriptor: "tier:pro"
+    limit: 100
+    window_seconds: 60
+
+  # Free tier: 10 requests per minute
+  - descriptor: "tier:free"
+    limit: 10
+    window_seconds: 60
+
+  # High-risk sensitive endpoint rule: 5 requests per 10 seconds
+  - descriptor: "endpoint:/api/checkout"
+    limit: 5
+    window_seconds: 10
